@@ -1,0 +1,57 @@
+{
+  "kind": "build_request",
+  "title": "Start a new app experience (replace current family chat UI with a new-app placeholder)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Replace the current Family Chat app primary flow (chat + family settings views) with a minimal “New App” placeholder experience that clearly indicates this is a fresh app starting point, since the user requested creating a new app. The placeholder must be accessible after Internet Identity sign-in and should not expose the existing chat or family settings screens from the main navigation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "as new app creat"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After signing in, the app shows a dedicated “New App” placeholder screen instead of the ChatPage/FamilySettingsPage views.",
+        "The AppShell navigation does not provide routes/tabs/buttons to the existing chat or family settings screens.",
+        "All user-facing text on the placeholder screen is in English.",
+        "The app still builds and runs with the existing React + React Query + Internet Identity setup (no edits required to immutable hook/provider files)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a simple “What do you want to build?” input area on the “New App” placeholder screen to capture the user’s intended new app description locally (client-side state only), with a prominent call-to-action to continue (no backend persistence required).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "as new app creat"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The placeholder screen includes a text input (multi-line) labeled in English (e.g., “Describe your app”).",
+        "Typing into the input updates local state and is preserved while the user stays on the page.",
+        "A primary button (English label) is present; clicking it shows an on-screen confirmation (e.g., inline alert) that the description was captured (no backend calls)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or any files under frontend/src/components/ui (immutable paths).",
+    "Backend must remain a single Motoko actor in backend/main.mo; only introduce migration.mo if a persistent state upgrade is necessary."
+  ],
+  "nonGoals": [
+    "Do not implement any new backend data model or APIs for the new app idea capture.",
+    "Do not delete existing backend family chat logic; only remove/hide its UI entry points from the primary user flow.",
+    "Do not add third-party authentication providers (Internet Identity only)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

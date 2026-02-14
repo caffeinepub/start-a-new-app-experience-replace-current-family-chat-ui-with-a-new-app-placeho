@@ -1,0 +1,50 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Replace Family Chat primary flow with signed-in New App placeholder",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Replace the signed-in primary flow with a dedicated “New App” placeholder screen and remove navigation access to Chat/Family Settings.",
+      "acceptanceCriteria": [
+        "After signing in, the app shows a dedicated “New App” placeholder screen instead of the ChatPage/FamilySettingsPage views.",
+        "The AppShell navigation does not provide routes/tabs/buttons to the existing chat or family settings screens.",
+        "All user-facing text on the placeholder screen is in English.",
+        "The app still builds and runs with the existing React + React Query + Internet Identity setup (no edits required to immutable hook/provider files)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/newApp/NewAppPlaceholderPage.tsx",
+          "operation": "create",
+          "description": "Create a signed-in “New App” placeholder page that clearly signals a fresh starting point. Use shadcn-ui components (e.g., Card, Button, Alert) for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the app’s authenticated content to render the new NewAppPlaceholderPage as the primary post-sign-in view, and remove the ChatPage/FamilySettingsPage view-switching from the main flow so those screens are no longer reachable from normal navigation."
+        },
+        {
+          "path": "frontend/src/components/layout/AppShell.tsx",
+          "operation": "modify",
+          "description": "Remove Chat/Settings navigation controls and related view-switching props, and update header branding to reflect the new “New App” experience while keeping existing InstallEntryPoint and LoginButton. Use existing shadcn-ui Button/Separator where needed; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add a client-side-only “What do you want to build?” multi-line input with a primary CTA that confirms capture locally.",
+      "acceptanceCriteria": [
+        "The placeholder screen includes a text input (multi-line) labeled in English (e.g., “Describe your app”).",
+        "Typing into the input updates local state and is preserved while the user stays on the page.",
+        "A primary button (English label) is present; clicking it shows an on-screen confirmation (e.g., inline alert) that the description was captured (no backend calls)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/newApp/NewAppPlaceholderPage.tsx",
+          "operation": "modify",
+          "description": "Implement a labeled multi-line input bound to local component state and a primary CTA button that, when clicked, shows an inline confirmation message (no backend calls). Prefer shadcn-ui Textarea/Button/Alert for UI consistency; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

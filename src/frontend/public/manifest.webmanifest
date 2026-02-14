@@ -1,0 +1,31 @@
+{
+  "name": "Family Chat - Private Family Messaging",
+  "short_name": "Family Chat",
+  "description": "Private family chat app with Internet Identity authentication",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f3ed",
+  "theme_color": "#8b9d83",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/generated/family-chat-icon.dim_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/generated/family-chat-icon.dim_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/generated/family-chat-icon-maskable.dim_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

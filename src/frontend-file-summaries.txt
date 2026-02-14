@@ -1,0 +1,23 @@
+{
+  "frontend/src/index.css": "Global styles with warm sage green and cream OKLCH color palette for light and dark modes, establishing a family-friendly theme with custom design tokens.",
+  "frontend/src/App.tsx": "Main application component that renders the NewAppPlaceholderPage within AppShell after authentication, with theme provider, toaster, and service worker registration.",
+  "frontend/src/components/auth/AuthGate.tsx": "Authentication gate component that displays a welcoming sign-in screen for unauthenticated users and renders children for authenticated users.",
+  "frontend/src/components/auth/LoginButton.tsx": "Reusable login/logout button component with loading states and proper query cache clearing on logout.",
+  "frontend/src/components/auth/AccessDeniedScreen.tsx": "Displays a clear access denied message with optional back navigation for unauthorized access attempts.",
+  "frontend/src/components/auth/AdminRouteGuard.tsx": "Route guard component that restricts access to admin-only sections and shows access denied screen for non-admin users.",
+  "frontend/src/components/layout/AppShell.tsx": "Simplified layout shell with header showing \"New App\" branding, user principal, InstallEntryPoint, LoginButton, and branded footer, with no navigation controls for chat or settings.",
+  "frontend/src/features/auth/hooks/useAdminStatus.ts": "React Query hook that checks if the current user has admin privileges using the backend isCallerAdmin method.",
+  "frontend/src/features/auth/hooks/useMembershipStatus.ts": "React Query hook that verifies if the current user is a family member using the backend isMember method.",
+  "frontend/src/features/chat/ChatPage.tsx": "Main chat interface with message list, real-time polling, compose box, and membership verification with access control.",
+  "frontend/src/features/chat/hooks/useChatMessages.ts": "React Query hook that fetches chat messages with automatic 5-second polling for near real-time updates.",
+  "frontend/src/features/chat/hooks/usePostMessage.ts": "Mutation hook for posting new messages with validation, error handling, and automatic message list refresh.",
+  "frontend/src/features/settings/FamilySettingsPage.tsx": "Admin-only family settings page for managing member allowlist with add/remove functionality and Principal ID validation.",
+  "frontend/src/features/settings/hooks/useFamilyMembers.ts": "React Query hooks for listing, adding, and removing family members with proper cache invalidation and toast notifications.",
+  "frontend/public/manifest.webmanifest": "Web app manifest defining PWA metadata including name, display mode, theme colors (warm sage/cream), and icon references for installability.",
+  "frontend/public/sw.js": "Service worker implementing cache-first strategy for static assets and network-first for API calls with proper cache management and offline support.",
+  "frontend/src/pwa/registerServiceWorker.ts": "Helper function that registers the service worker only in production environments with graceful error handling.",
+  "frontend/src/pwa/useInstallPrompt.ts": "React hook managing beforeinstallprompt and appinstalled events, exposing install availability state and prompt trigger method.",
+  "frontend/src/components/pwa/InstallEntryPoint.tsx": "Header-friendly UI component showing an Install button when available or help dialog with manual installation instructions for unsupported platforms.",
+  "frontend/index.html": "HTML entry point with PWA manifest link, theme-color meta tag, and icon references for cross-platform installation support.",
+  "frontend/src/features/newApp/NewAppPlaceholderPage.tsx": "A placeholder page with a multi-line textarea for capturing app ideas and a button that shows an inline confirmation alert when clicked, using shadcn-ui Card, Textarea, Button, and Alert components."
+}

@@ -1,2 +1,3 @@
-# start-a-new-app-experience-replace-current-family-chat-ui-with-a-new-app-placeho
-Exported from Caffeine project: Start a new app experience (replace current family chat UI with a new-app placeholder)
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

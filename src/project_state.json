@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Start a new app project (create a new app from scratch).",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-replace-the-current-family-chat-app-primary-flow-chat-family-settings-views-with-a-minimal-new-app-placeholder-experience-that-clearly-indicates-this-is-a-fresh-app-starting-point-since-the-user-requested-creating-a-new-app-the-placeholder-must-be-accessible-after-internet-identity-sign-in-and-should-not-expose-the-existing-chat-or-family-settings-screens-from-the-main-navigation",
+      "title": "Replace the current Family Chat app primary flow (chat + family settings views) with a minimal “New App” placeholder experience that clearly indicates this is a fresh app starting point, since the user requested creating a new app. The placeholder must be accessible after Internet Identity sign-in and should not expose the existing chat or family settings screens from the main navigation.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-what-do-you-want-to-build-input-area-on-the-new-app-placeholder-screen-to-capture-the-user-s-intended-new-app-description-locally-client-side-state-only-with-a-prominent-call-to-action-to-continue-no-backend-persistence-required",
+      "title": "Add a simple “What do you want to build?” input area on the “New App” placeholder screen to capture the user’s intended new app description locally (client-side state only), with a prominent call-to-action to continue (no backend persistence required).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a new app project (start from scratch/new app creation).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Start a new app experience (replace current family chat UI with a new-app placeholder)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
